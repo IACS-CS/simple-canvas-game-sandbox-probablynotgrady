@@ -980,12 +980,19 @@ class T extends p {
 
 let gi = new T();
 
-gi.addDrawing(
-  function ({ ctx, width, height, elapsed }) {
-    // Your drawing code here...
-    // (see demo.js for fuller example)
-  }
-);
+let squareX = 0;
+let squareY = 0;
+gi.addDrawing(function ({ ctx, width, height, elapsed, stepTime }) {
+  ctx.fillRect(squareX, squareY, 20, 20);
+  ctx.fillStyle = "white";
+  
+
+});
+//have square move in different directions and at different speeds when clicked
+gi.addClickHandler(function ({ x, y }) {
+  squareX = x - 10;
+  squareY = y - 10;
+});
 
 gi.run();
-//# sourceMappingURL=index-d7b345db.js.map
+//# sourceMappingURL=index-4f946508.js.map
